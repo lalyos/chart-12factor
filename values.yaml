@@ -1,0 +1,15 @@
+
+title: loft0
+body: from helm
+color: orange
+
+ingress:
+   tld: realworks.fun
+
+# global:
+#   fleet:
+#     clusterLabels:
+#         color: cyan
+#         env: dev
+#         fleet.cattle.io/cluster: cluster-ea7913f6fbc6
+#         management.cattle.io/cluster-display-name: szerda

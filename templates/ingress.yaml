@@ -1,0 +1,22 @@
+{{- if .Values.ingress -}}
+{{- $fullName := include "chart-12factor.fullname" . -}}
+{{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: networking.k8s.io/v1beta1
+{{- else -}}
+apiVersion: extensions/v1beta1
+{{- end }}
+kind: Ingress
+metadata:
+  name: {{ $fullName }}
+  labels:
+    {{- include "chart-12factor.labels" . | nindent 4 }}
+spec:
+  rules:
+    - host: {{ .Release.Name }}.{{ include "fleet-cluster" . | default "global" }}.{{ default "example.com" .Values.ingress.tld }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: 80
+{{- end }}
