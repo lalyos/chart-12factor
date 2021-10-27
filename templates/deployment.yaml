@@ -23,11 +23,11 @@ spec:
           image: lalyos/12factor:latest
           env:
           - name: TITLE
-            value: {{ include "fleet-cluster" . | default "Welcome" }}
+            value: {{ .Values.title | default "Welcome" }}
           - name: BODY
             value: {{ .Values.body }}
           - name: COLOR
-            value: {{ include "fleet-color" . | default .Values.color | default "gray" }}
+            value: {{ .Values.color | default .Values.color | default "gray" }}
           ports:
             - name: http
               containerPort: 80
