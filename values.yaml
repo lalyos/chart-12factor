@@ -4,7 +4,7 @@ body: from helm
 color: orange
 
 ingress:
-   tld: realworks.fun
+   tld: k8z.eu
 
 # global:
 #   fleet:
