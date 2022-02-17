@@ -27,7 +27,7 @@ helm upgrade -i lunch \
 The domain name is generated as `releaseName`.`namespace`.`tld`
 see template: https://github.com/lalyos/chart-12factor/blob/simple/templates/ingress.yaml#L14
 
-use the `ingress.tld` helm variable
+to customize the domain name ending use the `ingress.tld` helm variable:
 ```
 ...
   --set ingress.tld=hatnem.de
