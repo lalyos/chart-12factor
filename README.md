@@ -11,7 +11,7 @@ It creates:
 to add the custom hel repo (you need the helm-git repo)
 ```
 helm plugin install https://github.com/aslafy-z/helm-git --version 0.11.1
-helm repo add "12factor git+https://github.com/lalyos/chart-12factor@?ref=simple"
+helm repo add 12factor "git+https://github.com/lalyos/chart-12factor@?ref=simple"
 ```
 
 ## Create a helm release
