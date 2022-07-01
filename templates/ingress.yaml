@@ -14,7 +14,10 @@ spec:
     - host: {{ .Release.Name }}.{{ .Release.Namespace }}.{{ default "k8z.eu" .Values.tld }}
       http:
         paths:
-          - path: /
-            backend:
-              serviceName: {{ $fullName }}
-              servicePort: 80
+        - backend:
+            service:
+              name: {{ $fullName }}
+              port:
+                number: 80
+          path: /
+          pathType: ImplementationSpecific
